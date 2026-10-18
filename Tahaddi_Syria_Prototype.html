@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172554">
+<title>تحدّي سوريا | نسخة تجريبية</title>
+<style>
+:root{--navy:#172554;--blue:#2563eb;--cyan:#38bdf8;--gold:#fbbf24;--bg:#f4f7fb;--ink:#18233a;--muted:#68758a;--card:#fff;--line:#e3e9f2;--green:#15803d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Tahoma,Arial,sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0}
+.app{max-width:480px;margin:auto;min-height:100vh;background:var(--bg);padding-bottom:82px;box-shadow:0 0 30px #0f172a0b}
+header{background:linear-gradient(145deg,#172554,#1d4ed8);color:#fff;padding:22px 18px 25px;border-radius:0 0 26px 26px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(145deg,#fde68a,#f59e0b);display:grid;place-items:center;color:#172554;font-size:25px;box-shadow:0 7px 18px #0002}.brand h1{font-size:20px;margin:0 0 4px}.brand p{font-size:11px;color:#dbeafe;margin:0}.pill{background:#ffffff20;border:1px solid #ffffff40;border-radius:99px;padding:8px 10px;font-size:11px;color:#fff}
+.welcome{margin-top:23px}.welcome h2{font-size:24px;margin:0 0 8px}.welcome p{font-size:13px;line-height:1.7;color:#dbeafe;margin:0}.wallet{margin-top:19px;background:#ffffff14;border:1px solid #ffffff2a;border-radius:17px;padding:14px;display:flex;justify-content:space-between;align-items:center}.wallet small{display:block;color:#dbeafe;margin-bottom:6px}.wallet strong{font-size:21px}.wallet span{font-size:11px;color:#dbeafe}
+main{padding:17px 15px}.section-title{display:flex;align-items:center;justify-content:space-between;margin:8px 2px 12px}.section-title h3{margin:0;font-size:17px}.section-title button{background:none;color:var(--blue);font-size:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:16px;margin-bottom:13px;box-shadow:0 5px 18px #1e293b06}
+.daily{background:linear-gradient(130deg,#fff,#f1f7ff);position:relative;overflow:hidden}.daily:after{content:"🏆";position:absolute;font-size:78px;opacity:.11;left:7px;top:10px}.tag{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:99px;padding:6px 9px;font-size:11px;font-weight:bold}.daily h3{font-size:20px;margin:12px 0 7px}.daily p{color:var(--muted);font-size:12px;line-height:1.6;margin:0 0 14px;max-width:78%}.primary{background:linear-gradient(90deg,#2563eb,#1d4ed8);color:white;border-radius:13px;padding:13px 15px;font-weight:bold;width:100%;box-shadow:0 7px 15px #2563eb20}.secondary{background:#eff6ff;color:#1d4ed8;border:1px solid #dbeafe;border-radius:12px;padding:10px 12px;font-weight:bold}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px}.mini{padding:14px}.mini .emoji{font-size:24px}.mini strong{display:block;font-size:17px;margin:9px 0 4px}.mini small{color:var(--muted);font-size:11px;line-height:1.5}
+.prize-row{display:flex;align-items:center;gap:12px}.prize-icon{width:47px;height:47px;flex:0 0 47px;border-radius:15px;background:#fff7db;display:grid;place-items:center;font-size:24px}.prize-row strong{display:block;font-size:15px;margin-bottom:5px}.prize-row small{color:var(--muted);font-size:11px}.amount{margin-right:auto;font-size:14px;font-weight:bold;color:#a16207;white-space:nowrap}
+.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.social{border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px 5px;text-align:center;color:var(--ink);text-decoration:none;font-size:11px}.social b{display:block;font-size:22px;margin-bottom:5px}.fb{color:#1877f2}.yt{color:#f00}.ig{color:#c13584}
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(480px,100%);background:#ffffffef;backdrop-filter:blur(12px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 7px calc(8px + env(safe-area-inset-bottom));z-index:10}.navbtn{background:transparent;color:#7b879a;font-size:10px;padding:5px 2px}.navbtn span{display:block;font-size:20px;margin-bottom:4px}.navbtn.active{color:var(--blue);font-weight:bold}
+.page{display:none}.page.active{display:block}.backline{display:flex;align-items:center;gap:9px;margin-bottom:14px}.backline h2{font-size:20px;margin:0}.muted{color:var(--muted);font-size:12px;line-height:1.7}.question-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:12px}.progress{height:7px;background:#e5eaf2;border-radius:9px;overflow:hidden;margin-bottom:18px}.progress div{height:100%;width:0;background:linear-gradient(90deg,#38bdf8,#2563eb);transition:width .25s}.question{font-size:19px;line-height:1.6;margin:10px 0 18px}.answers{display:grid;gap:9px}.answer{background:white;border:1px solid var(--line);border-radius:13px;padding:14px;text-align:right;color:var(--ink)}.answer:active,.answer.selected{border-color:#2563eb;background:#eff6ff}.answer.correct{border-color:#16a34a;background:#f0fdf4}.answer.wrong{border-color:#dc2626;background:#fef2f2}.notice{padding:11px;border-radius:12px;background:#fef3c7;color:#854d0e;font-size:11px;line-height:1.7;margin-top:12px}.leader{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.rank{width:31px;height:31px;display:grid;place-items:center;background:#eef2ff;border-radius:10px;font-weight:bold;color:#3730a3}.leader .name{flex:1;font-size:13px}.leader strong{font-size:13px}.leader:last-child{border-bottom:0}.formrow{display:grid;gap:6px;margin-bottom:12px}.formrow label{font-size:12px;color:var(--muted)}.formrow input,.formrow select{border:1px solid var(--line);border-radius:11px;padding:12px;background:#fff;width:100%}.admin-stat{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-stat .card{margin:0}.admin-stat strong{font-size:19px;display:block;margin-top:8px}.smallbtn{background:#e0e7ff;color:#1d4ed8;padding:8px 10px;border-radius:9px;font-size:11px}.empty{padding:25px;text-align:center;color:var(--muted);font-size:13px}.toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%);background:#111827;color:white;padding:11px 15px;border-radius:12px;font-size:12px;display:none;z-index:20;max-width:90%;text-align:center}
+@media(min-width:700px){body{padding:20px 0}.app{border-radius:24px;overflow:hidden;min-height:calc(100vh - 40px)}nav{bottom:20px;border-radius:0 0 24px 24px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+ <div class="top">
+  <div class="brand"><div class="logo">🏆</div><div><h1>تحدّي سوريا</h1><p>العب • نافس • اربح</p></div></div>
+  <div class="pill">نسخة تجريبية</div>
+ </div>
+ <div class="welcome"><h2>جاهز تتحدّى؟ 🇸🇾</h2><p>اختبر معلوماتك، اجمع النقاط، ونافس لاعبين من كل المحافظات.</p></div>
+ <div class="wallet"><div><small>نقاطك التجريبية</small><strong id="points">0</strong></div><span>النقاط ليست رصيداً نقدياً</span></div>
+</header>
+<main>
+ <section class="page active" id="home">
+  <div class="section-title"><h3>مسابقة اليوم</h3><span class="tag">مجانية</span></div>
+  <div class="card daily"><span class="tag">تحدّي يومي</span><h3>اختبر معلوماتك</h3><p>5 أسئلة قصيرة. كل إجابة صحيحة بتزيد نقاطك.</p><button class="primary" onclick="startQuiz()">ابدأ المسابقة ←</button></div>
+  <div class="section-title"><h3>جوائز قادمة</h3><button onclick="showPage('prizes')">كل الجوائز ←</button></div>
+  <div class="grid2">
+   <div class="card mini"><div class="emoji">💵</div><strong>جائزة يومية</strong><small>المبلغ يعلن بعد تأمين تمويله</small></div>
+   <div class="card mini"><div class="emoji">🏆</div><strong>جائزة أسبوعية</strong><small>أفضل نتيجة أسبوعية وفق الشروط</small></div>
+  </div>
+  <div class="section-title"><h3>ترتيب اللاعبين</h3><button onclick="showPage('leaderboard')">عرض الكل ←</button></div>
+  <div class="card" id="homeLeaders"></div>
+  <div class="section-title"><h3>تابعنا</h3></div>
+  <div class="socials">
+   <a class="social" href="#" onclick="socialLink('فيسبوك');return false"><b class="fb">f</b>فيسبوك</a>
+   <a class="social" href="#" onclick="socialLink('يوتيوب');return false"><b class="yt">▶</b>يوتيوب</a>
+   <a class="social" href="#" onclick="socialLink('إنستغرام');return false"><b class="ig">◎</b>إنستغرام</a>
+  </div>
+  <p class="muted">روابط التواصل غير مفعّلة حتى تضيف روابط حساباتك الرسمية.</p>
+ </section>
+
+ <section class="page" id="quiz">
+  <div class="backline"><button class="secondary" onclick="showPage('home')">← رجوع</button><h2>المسابقة اليومية</h2></div>
+  <div class="card">
+   <div class="question-top"><span id="qCount">السؤال 1 من 5</span><span id="qScore">النقاط: 0</span></div>
+   <div class="progress"><div id="progress"></div></div>
+   <div class="question" id="question">السؤال</div>
+   <div class="answers" id="answers"></div>
+   <p class="muted" id="feedback" aria-live="polite"></p>
+   <button class="primary" id="nextBtn" style="display:none;margin-top:12px" onclick="nextQuestion()">السؤال التالي ←</button>
+  </div>
+  <div class="notice">هذه نسخة تجريبية: النقاط للتجربة فقط، ولا تمنح حقاً مالياً أو جائزة حقيقية.</div>
+ </section>
+
+ <section class="page" id="prizes">
+  <div class="backline"><button class="secondary" onclick="showPage('home')">← رجوع</button><h2>الجوائز</h2></div>
+  <div class="card prize-row"><div class="prize-icon">💵</div><div><strong>الجائزة اليومية</strong><small>تُعلن بعد تأمين قيمتها بالكامل</small></div><div class="amount">قريباً</div></div>
+  <div class="card prize-row"><div class="prize-icon">🏆</div><div><strong>الجائزة الأسبوعية</strong><small>لأفضل نتيجة وفق قواعد معلنة</small></div><div class="amount">قريباً</div></div>
+  <div class="notice">لن يتم الإعلان عن مبلغ أو تحويل أي جائزة فعلية قبل تأمين التمويل، ووضع الشروط، والتحقق من متطلبات المسابقات والدفع.</div>
+  <div class="card"><h3 style="margin-top:0">كيف يتم الفوز؟</h3><p class="muted">1. شارك مجاناً. 2. أجب عن الأسئلة. 3. راجع نتيجتك. 4. عند إطلاق الجوائز الحقيقية، يتم التحقق من الفائز ثم التواصل معه عبر قناة رسمية.</p></div>
+ </section>
+
+ <section class="page" id="leaderboard">
+  <div class="backline"><button class="secondary" onclick="showPage('home')">← رجوع</button><h2>ترتيب اللاعبين</h2></div>
+  <div class="card" id="allLeaders"></div>
+  <p class="muted">الترتيب المعروض تجريبي ومحلي على هذا الجهاز، وليس ترتيباً وطنياً متصلاً بخادم.</p>
+ </section>
+
+ <section class="page" id="admin">
+  <div class="backline"><button class="secondary" onclick="showPage('home')">← رجوع</button><h2>لوحة الإدارة</h2></div>
+  <div class="notice">لوحة محلية تجريبية وليست محمية بتسجيل دخول. لا تضع فيها بيانات مالية أو شخصية حقيقية في هذه النسخة.</div>
+  <div class="admin-stat">
+   <div class="card"><small class="muted">ميزانية التجربة</small><strong id="budgetStat">0 ل.س</strong></div>
+   <div class="card"><small class="muted">جوائز مسجلة</small><strong id="prizeStat">0 ل.س</strong></div>
+   <div class="card"><small class="muted">جوائز مدفوعة</small><strong id="paidStat">0 ل.س</strong></div>
+   <div class="card"><small class="muted">الرصيد التقديري</small><strong id="balanceStat">0 ل.س</strong></div>
+  </div>
+  <div class="card" style="margin-top:13px">
+   <h3 style="margin-top:0">تسجيل ميزانية البداية</h3>
+   <div class="formrow"><label for="budgetInput">ميزانية التجربة بالليرة السورية</label><input id="budgetInput" type="number" min="0" placeholder="مثلاً 100000"></div>
+   <button class="primary" onclick="saveBudget()">حفظ الميزانية</button>
+  </div>
+  <div class="card">
+   <h3 style="margin-top:0">إضافة جائزة</h3>
+   <div class="formrow"><label for="prizeType">نوع الجائزة</label><select id="prizeType"><option>جائزة يومية</option><option>جائزة أسبوعية</option></select></div>
+   <div class="formrow"><label for="prizeAmount">قيمة الجائزة (ل.س)</label><input id="prizeAmount" type="number" min="0" placeholder="قيمة الجائزة"></div>
+   <div class="formrow"><label for="prizeStatus">حالة التمويل</label><select id="prizeStatus"><option value="unfunded">غير مؤمّنة</option><option value="funded">مؤمّنة بالكامل</option></select></div>
+   <button class="primary" onclick="addPrize()">إضافة إلى السجل</button>
+  </div>
+  <div class="card">
+   <h3 style="margin-top:0">سجل الجوائز</h3><div id="prizeLog" class="muted">لا توجد جوائز مسجلة.</div>
+  </div>
+  <div class="card">
+   <h3 style="margin-top:0">سجل الفائزين التجريبي</h3>
+   <div id="winnerLog" class="muted">لم تُسجّل نتائج بعد.</div>
+   <button class="secondary" onclick="exportData()" style="margin-top:12px;width:100%">تصدير السجل بصيغة JSON</button>
+  </div>
+ </section>
+</main>
+<nav>
+ <button class="navbtn active" data-page="home" onclick="showPage('home')"><span>⌂</span>الرئيسية</button>
+ <button class="navbtn" data-page="quiz" onclick="startQuiz()"><span>❓</span>المسابقة</button>
+ <button class="navbtn" data-page="prizes" onclick="showPage('prizes')"><span>🎁</span>الجوائز</button>
+ <button class="navbtn" data-page="admin" onclick="showPage('admin')"><span>⚙</span>الإدارة</button>
+</nav>
+<div class="toast" id="toast" role="status"></div>
+</div>
+<script>
+const questions=[
+ {q:"ما عاصمة سوريا؟",a:["حلب","دمشق","حمص","اللاذقية"],correct:1},
+ {q:"أي نهر يمر بمدينة الرقة؟",a:["الفرات","العاصي","بردى","الخابور"],correct:0},
+ {q:"ما العملة الرسمية في سوريا؟",a:["الدينار","الليرة السورية","الدرهم","الجنيه"],correct:1},
+ {q:"أي مدينة سورية تشتهر بقلعتها التاريخية؟",a:["حلب","طرطوس","القامشلي","درعا"],correct:0},
+ {q:"كم عدد أيام الأسبوع؟",a:["5","6","7","8"],correct:2}
+];
+let qIndex=0,score=0,answered=false,points=0,quizFinished=false;
+let budget=0,prizes=[],winners=[];
+const demoLeaders=[{name:"نور",score:120},{name:"سامر",score:95},{name:"لينا",score:80},{name:"أنت",score:0}];
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(window._toastTimer);window._toastTimer=setTimeout(()=>t.style.display='none',2600)}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='admin')renderAdmin();window.scrollTo({top:0,behavior:'smooth'})}
+function renderLeaders(){let list=[...demoLeaders];list[list.length-1].score=points;list.sort((a,b)=>b.score-a.score);const html=list.map((u,i)=>`<div class="leader"><div class="rank">${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</div><div class="name">${u.name}</div><strong>${u.score} نقطة</strong></div>`).join('');document.getElementById('homeLeaders').innerHTML=html;document.getElementById('allLeaders').innerHTML=html}
+function startQuiz(){qIndex=0;score=0;answered=false;quizFinished=false;showPage('quiz');renderQuestion()}
+function renderQuestion(){const q=questions[qIndex];document.getElementById('qCount').textContent=`السؤال ${qIndex+1} من ${questions.length}`;document.getElementById('qScore').textContent=`النقاط: ${score}`;document.getElementById('progress').style.width=`${qIndex/questions.length*100}%`;document.getElementById('question').textContent=q.q;document.getElementById('feedback').textContent='';document.getElementById('nextBtn').style.display='none';document.getElementById('answers').innerHTML=q.a.map((a,i)=>`<button class="answer" onclick="answerQuestion(${i})">${a}</button>`).join('');answered=false}
+function answerQuestion(i){if(answered)return;answered=true;const q=questions[qIndex],buttons=[...document.querySelectorAll('.answer')];buttons.forEach((b,j)=>{b.disabled=true;if(j===q.correct)b.classList.add('correct');if(j===i&&i!==q.correct)b.classList.add('wrong')});if(i===q.correct){score+=10;document.getElementById('feedback').textContent='إجابة صحيحة! +10 نقاط';}else{document.getElementById('feedback').textContent='مو مشكلة، جرّب بالسؤال التالي.'}document.getElementById('qScore').textContent=`النقاط: ${score}`;document.getElementById('progress').style.width=`${(qIndex+1)/questions.length*100}%`;document.getElementById('nextBtn').style.display='block';document.getElementById('nextBtn').textContent=qIndex===questions.length-1?'عرض النتيجة':'السؤال التالي ←'}
+function nextQuestion(){if(qIndex<questions.length-1){qIndex++;renderQuestion()}else{points+=score;quizFinished=true;document.getElementById('question').textContent=`انتهت المسابقة! نتيجتك ${score} نقطة.`;document.getElementById('answers').innerHTML='';document.getElementById('feedback').textContent='تم تحديث نقاطك التجريبية. هذه النقاط لا تمثل رصيداً نقدياً ولا تضمن جائزة.';document.getElementById('nextBtn').textContent='العودة للرئيسية';document.getElementById('nextBtn').onclick=()=>{document.getElementById('nextBtn').onclick=nextQuestion;showPage('home')};winners.push({date:new Date().toLocaleDateString('ar-SY'),score,status:'نتيجة تجريبية فقط'});document.getElementById('progress').style.width='100%';document.getElementById('points').textContent=points;renderLeaders()}}
+function socialLink(name){showToast('أضف رابط حساب '+name+' الرسمي لتفعيل هذا الزر.')}
+function saveBudget(){const v=Number(document.getElementById('budgetInput').value);if(!Number.isFinite(v)||v<0){showToast('أدخل مبلغاً صحيحاً.');return}budget=v;renderAdmin();showToast('تم حفظ الميزانية على هذا الجهاز.')}
+function addPrize(){const type=document.getElementById('prizeType').value,amount=Number(document.getElementById('prizeAmount').value),status=document.getElementById('prizeStatus').value;if(!Number.isFinite(amount)||amount<=0){showToast('أدخل قيمة جائزة صحيحة.');return}if(status==='funded'&&amount>budget-prizes.filter(p=>p.status==='funded').reduce((s,p)=>s+p.amount,0)){showToast('المبلغ المؤمّن يتجاوز الميزانية المتاحة.');return}prizes.push({id:'P'+String(prizes.length+1).padStart(3,'0'),type,amount,status,date:new Date().toLocaleDateString('ar-SY'),paid:0});document.getElementById('prizeAmount').value='';renderAdmin();showToast('تمت إضافة الجائزة إلى السجل التجريبي.')}
+function renderAdmin(){document.getElementById('budgetStat').textContent=budget.toLocaleString('en-US')+' ل.س';const total=prizes.reduce((s,p)=>s+p.amount,0),paid=prizes.reduce((s,p)=>s+p.paid,0);document.getElementById('prizeStat').textContent=total.toLocaleString('en-US')+' ل.س';document.getElementById('paidStat').textContent=paid.toLocaleString('en-US')+' ل.س';document.getElementById('balanceStat').textContent=(budget-paid).toLocaleString('en-US')+' ل.س';document.getElementById('prizeLog').innerHTML=prizes.length?prizes.map(p=>`<div class="leader"><div class="name"><b>${p.id} — ${p.type}</b><br><small>${p.date} • ${p.status==='funded'?'مؤمّنة':'غير مؤمّنة'}</small></div><strong>${p.amount.toLocaleString('en-US')} ل.س</strong></div>`).join(''):'لا توجد جوائز مسجلة.';document.getElementById('winnerLog').innerHTML=winners.length?winners.map((w,i)=>`<div class="leader"><div class="rank">${i+1}</div><div class="name">نتيجة تجريبية • ${w.date}<br><small>${w.status}</small></div><strong>${w.score} نقطة</strong></div>`).join(''):'لم تُسجّل نتائج بعد.'}
+function exportData(){const data={project:'تحدّي سوريا - نسخة تجريبية',budget,prizes,winners,exportedAt:new Date().toISOString(),note:'لا يحتوي على معلومات دفع حساسة.'};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='tahaddi-syria-admin.json';a.click();URL.revokeObjectURL(url);showToast('تم تجهيز ملف السجل للتصدير.')}
+renderLeaders();renderAdmin();
+</script>
+</body>
+</html>
