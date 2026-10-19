@@ -1,0 +1,11 @@
+{
+  "id": "/tahaddi-syria/",
+  "name": "تحدّي سوريا",
+  "short_name": "تحدّي سوريا",
+  "description": "تطبيق تحدّي سوريا للمسابقات والألعاب المجانية والجوائز النقدية.",
+  "start_url": "/tahaddi-syria/",
+  "scope": "/tahaddi-syria/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#172554"
+}
